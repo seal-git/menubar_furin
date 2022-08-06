@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -20,6 +21,10 @@
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Quit Menubar RunCat" id="4sb-4s-VLi">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Ve5-qx-rZc"/>
+                                        <menuItem title="Item" id="wsy-rM-0lo" userLabel="振り子">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                     </items>
@@ -62,6 +67,65 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="ube-rT-5YF">
+            <objects>
+                <windowController id="aQr-ne-LyH" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="4eH-dd-0wH">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+                        <view key="contentView" id="gI2-QN-jcp">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="aQr-ne-LyH" id="sgi-sx-OU1"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="UXj-dV-o3P" kind="relationship" relationship="window.shadowedContentViewController" id="162-0S-WG0"/>
+                    </connections>
+                </windowController>
+                <customObject id="Yng-xm-NcO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="-100"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="r1c-Bu-v20">
+            <objects>
+                <viewController id="UXj-dV-o3P" sceneMemberID="viewController">
+                    <view key="view" id="oz8-0H-XVg">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gND-Ii-vUf">
+                                <rect key="frame" x="172" y="156" width="137" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="振り子を真下からみた図" id="GEH-4z-B7a">
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFl-NR-KfS">
+                                <rect key="frame" x="42" y="96" width="397" height="28"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="EQ5-li-Yo1"/>
+                            </slider>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="gND-Ii-vUf" firstAttribute="top" secondItem="oz8-0H-XVg" secondAttribute="top" constant="98" id="X1u-ai-18Q"/>
+                            <constraint firstItem="gND-Ii-vUf" firstAttribute="centerX" secondItem="oz8-0H-XVg" secondAttribute="centerX" id="bLp-cV-rSC"/>
+                            <constraint firstItem="RFl-NR-KfS" firstAttribute="top" secondItem="gND-Ii-vUf" secondAttribute="bottom" constant="34" id="biW-dk-EbJ"/>
+                            <constraint firstItem="gND-Ii-vUf" firstAttribute="centerX" secondItem="RFl-NR-KfS" secondAttribute="centerX" id="jTu-ad-v5V"/>
+                            <constraint firstItem="RFl-NR-KfS" firstAttribute="leading" secondItem="oz8-0H-XVg" secondAttribute="leading" constant="44" id="uYN-AH-erE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="wk4-Sf-vfe" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="247"/>
         </scene>
     </scenes>
 </document>

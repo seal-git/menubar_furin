@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="PEd-7d-5j0">
+            <objects>
+                <customObject id="9uD-mB-xHs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="bU7-R8-ocO" sceneMemberID="viewController">
+                    <view key="view" id="tOy-S4-hL0">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="64" y="91"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="pVd-Oq-1P1">
+            <objects>
+                <windowController id="Dj1-Ia-Se0" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="qP1-Zb-qA5">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+                        <view key="contentView" id="Ycr-52-8s5">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="Dj1-Ia-Se0" id="gAv-Gm-9co"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="kKM-9w-B0a" kind="relationship" relationship="window.shadowedContentViewController" id="flO-tg-PTe"/>
+                    </connections>
+                </windowController>
+                <customObject id="DgO-eY-0bI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="-323"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PB9-MS-aKq">
+            <objects>
+                <customObject id="44y-gm-oaT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="kKM-9w-B0a" sceneMemberID="viewController">
+                    <view key="view" id="Uka-we-dJA">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kzd-GT-7bT">
+                                <rect key="frame" x="93" y="84" width="294" height="28"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="NsP-8M-UJ7"/>
+                            </slider>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NKu-gV-nTy">
+                                <rect key="frame" x="170" y="133" width="141" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141" id="rzc-D8-AxC"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="真下から見た時の振り子" drawsBackground="YES" id="qY5-ua-N7u">
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Kzd-GT-7bT" firstAttribute="leading" secondItem="Uka-we-dJA" secondAttribute="leading" constant="95" id="1sQ-SG-9gO"/>
+                            <constraint firstItem="NKu-gV-nTy" firstAttribute="centerX" secondItem="Uka-we-dJA" secondAttribute="centerX" id="272-id-yTp"/>
+                            <constraint firstItem="NKu-gV-nTy" firstAttribute="centerX" secondItem="Kzd-GT-7bT" secondAttribute="centerX" id="FRq-lv-c3M"/>
+                            <constraint firstItem="NKu-gV-nTy" firstAttribute="top" secondItem="Uka-we-dJA" secondAttribute="top" constant="116" id="YyC-PN-Bsj"/>
+                            <constraint firstItem="Kzd-GT-7bT" firstAttribute="top" secondItem="NKu-gV-nTy" secondAttribute="bottom" constant="23" id="suu-A6-3MY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-552" y="20"/>
+        </scene>
+    </scenes>
+</document>
