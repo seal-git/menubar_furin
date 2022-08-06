@@ -21,7 +21,7 @@ class FurinSound {
         // （あるいは、あらかじめリストにプレイヤーを放り込んでおいて順繰りに鳴らす方針でもいいかもしれない）
         let player = Player()
         let soundName: String = decideSound(movingSpeed: movingSpeed)
-        if soundName.isEmpty { return; }
+        if soundName.isEmpty { return }
         player.playSound(name: soundName)
         players.append(player)
         // 生成したプレイヤーをいつまでもリストに保持するとメモリ使用量がやばくなるため、プレイヤーの最大保持数に制限を設けている
@@ -32,8 +32,8 @@ class FurinSound {
     // 再生する音源名を決めるファイル
     // ちゃんとしたロジックは後で考える
     func decideSound(movingSpeed: Int) -> String {
-        if(movingSpeed==0) { return "チーン" }
-        if(movingSpeed==1) { return "チーン弱" }
+//        if(movingSpeed==0) { return "チーン" }
+//        if(movingSpeed==1) { return "チーン弱" }
         return String() // 空文字列
     }
 }
