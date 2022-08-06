@@ -15,10 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let nc = NSWorkspace.shared.notificationCenter
     private var isRunning: Bool = false
-    private var animationInterval: Double = 1.0
     private let cpu = CPU()
-    private var animationTimer: Timer? = nil
-    private var simulationTimer: Timer? = nil
+    private var applicationTimer: Timer? = nil
     private var usage: (value: Double, description: String) = (0.0, "")
     private var isShowUsage: Bool = false
     private var menubarAnimation = MenubarAnimation()
@@ -55,12 +53,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func startRunning() {
-        animationTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { (t) in
+        applicationTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { (t) in
             self.usage = self.cpu.usageCPU()
-            self.animationInterval = 0.02 * (100 - max(0.0, min(99.0, self.usage.value))) / 6
+            self.menubarAnimation.updateInterval(cpuUsage: self.usage.value)
             self.statusItem.button?.title = self.isShowUsage ? self.usage.description : ""
         })
-        animationTimer?.fire()
+        applicationTimer?.fire()
         isRunning = true
         animate()
         simulate()
@@ -68,14 +66,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func stopRunning() {
         isRunning = false
-        animationTimer?.invalidate()
+        applicationTimer?.invalidate()
     }
 
     func animate() {
         statusItem.button?.image = menubarAnimation.getCurrentFrame()
         menubarAnimation.proceed()
         if !isRunning { return }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + animationInterval) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + menubarAnimation.getInterval()) {
             self.animate()
         }
     }
@@ -103,6 +101,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 fileprivate class MenubarAnimation {
+    private var interval: Double = 1.0
     private var frames = [NSImage]()
     private var count: Int = 0
     func setupFrames() {
@@ -115,6 +114,12 @@ fileprivate class MenubarAnimation {
     }
     func getCurrentFrame() -> NSImage {
         return frames[count]
+    }
+    func updateInterval(cpuUsage: Double){
+        self.interval = 0.02 * (100 - max(0.0, min(99.0, cpuUsage))) / 6
+    }
+    func getInterval() -> Double {
+        return interval
     }
 }
 
