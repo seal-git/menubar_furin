@@ -16,6 +16,10 @@ class Wind {
     let EPS : Double = pow(1,-10)
      
     func getWind(CPU: Double) -> (Double) {
-        return CPU * c * pow( -log(1 + EPS - Double.random(in:0...1)), 1/k)
+        return c * calculateAverageWind(CPU: CPU) * pow( -log(1 + EPS - Double.random(in:0...1)), 1/k)
+    }
+    
+    func calculateAverageWind(CPU: Double) -> (Double) {
+        return CPU
     }
 }
