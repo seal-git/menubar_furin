@@ -32,8 +32,8 @@ class FurinSound {
     // 再生する音源名を決めるファイル
     // ちゃんとしたロジックは後で考える
     func decideSound(movingSpeed: Int) -> String {
-//        if(movingSpeed==0) { return "チーン" }
-//        if(movingSpeed==1) { return "チーン弱" }
+        if movingSpeed==0 { return "チーン" }
+        if movingSpeed==1 { return "チーン弱" }
         return String() // 空文字列
     }
 }
