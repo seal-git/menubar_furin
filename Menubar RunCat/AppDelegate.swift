@@ -79,7 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func simulate() {
-        simulation.sound()
+        // simulation.sound()
         simulation.proceed(cpuUsage: cpu.usageCPU().value)
         if !isRunning { return }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + simulation.getInterval()) {
@@ -126,15 +126,16 @@ fileprivate class MenubarAnimation {
 fileprivate class Simulation {
     private let interval: Double = 1.0
     private var count: Int = 0
-    // private let wind = Wind()
-    // private var furin = Furin()
+     private let wind = Wind()
+     private var furin = Furin()
     private var furinSound = FurinSound()
     // 風鈴の状態を進める
     func proceed(cpuUsage: Double){
         // 仮の実装
-        count = (count + 1)%4
+        //count = (count + 1)%4
         // 本実装のイメージ
-        // furin.proceed( wind.getWind(CPU: cpuUsage), interval )
+        furin.proceed( windSpeed: -100 )
+        //furin.proceed( wind.getWind(CPU: cpuUsage), interval )
     }
     // 風鈴の状態に応じて音を鳴らす
     func sound(){
