@@ -77,7 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func animate() {
         statusItem.button?.image = frames[cnt]
         cnt = (cnt + 1) % frames.count
-        furinSound.playSound(hoge: cnt%frames.count)
+        furinSound.playSound(movingSpeed: cnt%frames.count)
         if !isRunning { return }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + interval) {
             self.animate()
