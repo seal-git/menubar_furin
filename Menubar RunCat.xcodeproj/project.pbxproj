@@ -11,6 +11,10 @@
 		1CEF10A422F922DD00DAD355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF10A322F922DD00DAD355 /* Assets.xcassets */; };
 		1CEF10A722F922DD00DAD355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF10A522F922DD00DAD355 /* Main.storyboard */; };
 		1CEF10B022F9342600DAD355 /* CPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF10AF22F9342600DAD355 /* CPU.swift */; };
+		90BFB5DD289DFB88002FC30E /* チーン1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5DC289DFB88002FC30E /* チーン1.mp3 */; };
+		90BFB5DF289DFB91002FC30E /* チーン2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5DE289DFB91002FC30E /* チーン2.mp3 */; };
+		90BFB5E1289E0425002FC30E /* チーン.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5E0289E0425002FC30E /* チーン.mp3 */; };
+		90BFB5E3289E04AD002FC30E /* チーン弱.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5E2289E04AD002FC30E /* チーン弱.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		1CEF10A822F922DD00DAD355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CEF10A922F922DD00DAD355 /* Menubar_RunCat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Menubar_RunCat.entitlements; sourceTree = "<group>"; };
 		1CEF10AF22F9342600DAD355 /* CPU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPU.swift; sourceTree = "<group>"; };
+		90BFB5DC289DFB88002FC30E /* チーン1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン1.mp3"; sourceTree = "<group>"; };
+		90BFB5DE289DFB91002FC30E /* チーン2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン2.mp3"; sourceTree = "<group>"; };
+		90BFB5E0289E0425002FC30E /* チーン.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン.mp3"; sourceTree = "<group>"; };
+		90BFB5E2289E04AD002FC30E /* チーン弱.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン弱.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,10 @@
 				1CEF10A522F922DD00DAD355 /* Main.storyboard */,
 				1CEF10A822F922DD00DAD355 /* Info.plist */,
 				1CEF10A922F922DD00DAD355 /* Menubar_RunCat.entitlements */,
+				90BFB5DC289DFB88002FC30E /* チーン1.mp3 */,
+				90BFB5DE289DFB91002FC30E /* チーン2.mp3 */,
+				90BFB5E0289E0425002FC30E /* チーン.mp3 */,
+				90BFB5E2289E04AD002FC30E /* チーン弱.mp3 */,
 			);
 			path = "Menubar RunCat";
 			sourceTree = "<group>";
@@ -123,6 +135,10 @@
 			files = (
 				1CEF10A422F922DD00DAD355 /* Assets.xcassets in Resources */,
 				1CEF10A722F922DD00DAD355 /* Main.storyboard in Resources */,
+				90BFB5DF289DFB91002FC30E /* チーン2.mp3 in Resources */,
+				90BFB5E1289E0425002FC30E /* チーン.mp3 in Resources */,
+				90BFB5DD289DFB88002FC30E /* チーン1.mp3 in Resources */,
+				90BFB5E3289E04AD002FC30E /* チーン弱.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
