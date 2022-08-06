@@ -25,9 +25,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, AVAudioPlayerDelegate {
     private var usage: (value: Double, description: String) = (0.0, "")
     private var isShowUsage: Bool = false
     
-    // 効果音鳴らす用のクラスのインスタンス
-    var player1 =  player()
-    var player2 =  player()
+    // 風鈴の音を鳴らすだけ
+    private let furinSound = FurinSound()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         for i in (0 ..< 5) {
@@ -79,20 +78,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, AVAudioPlayerDelegate {
     func animate() {
         statusItem.button?.image = frames[cnt]
         cnt = (cnt + 1) % frames.count
-        if (cnt % frames.count == 0){
-            player1.playSound(name: "チーン")
-        } else if (cnt % frames.count == 1) {
-            player2.playSound(name: "チーン1")
-        }
+        furinSound.playSound(hoge: cnt%frames.count)
         if !isRunning { return }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + interval) {
             self.animate()
         }
     }
-    
-//    func furin() {
-//
-//    }
     
     @IBAction func toggleShowUsage(_ sender: NSMenuItem) {
         isShowUsage = sender.state == .off
@@ -107,22 +98,3 @@ class AppDelegate: NSObject, NSApplicationDelegate, AVAudioPlayerDelegate {
 
 }
 
-// 同時に音楽を再生するために、関数と変数のセットを複数作れるよう、クラスとして定義する。
-class player{
-    var audioPlayer: AVAudioPlayer!
-    func playSound(name: String) {
-        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
-            print("音源ファイルが見つかりません")
-            return
-        }
-        do {
-            // AVAudioPlayerのインスタンス化
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            // AVAudioPlayerのデリゲートをセット
-            audioPlayer.delegate = self as? AVAudioPlayerDelegate
-            // 音声の再生
-            audioPlayer.play()
-        } catch {
-        }
-    }
-}
