@@ -10,8 +10,8 @@ import AVFoundation
 
 // 風鈴の音を鳴らすクラス
 class FurinSound {
-    var players: [Player] = []
-    let maxPlayerNumber: Int = 10
+    private var players: [Player] = []
+    private let maxPlayerNumber: Int = 10
     
     // 風鈴の状態（速度?）を入力として音を鳴らす予定
     func playSound(hoge: Int){
@@ -35,8 +35,8 @@ class FurinSound {
 }
 
 // システムから音声を出力するクラス
-class Player {
-    var audioPlayer: AVAudioPlayer!
+fileprivate class Player {
+    private var audioPlayer: AVAudioPlayer!
     func playSound(name: String) {
         guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
             print("音源ファイルが見つかりません")
