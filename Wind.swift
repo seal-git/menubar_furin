@@ -16,6 +16,6 @@ class Wind {
     let EPS : Double = pow(1,-10)
      
     func getWind() -> (Double) {
-        return c * pow( -log(exp(1 + EPS - Double.random(in:0...1))), 1/k)
+        return c * pow( -log(1 + EPS - Double.random(in:0...1)), 1/k)
     }
 }
