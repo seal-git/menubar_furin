@@ -12,30 +12,26 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var menu: NSMenu!
-    
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let nc = NSWorkspace.shared.notificationCenter
-    private var frames = [NSImage]()
-    private var cnt: Int = 0
     private var isRunning: Bool = false
-    private var interval: Double = 1.0
+    private var animationInterval: Double = 1.0
     private let cpu = CPU()
-    private var cpuTimer: Timer? = nil
+    private var animationTimer: Timer? = nil
+    private var simulationTimer: Timer? = nil
     private var usage: (value: Double, description: String) = (0.0, "")
     private var isShowUsage: Bool = false
+    private var menubarAnimation = MenubarAnimation()
+    private var simulation = Simulation()
     
     // 風鈴の音を鳴らすだけ
     private let furinSound = FurinSound()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        for i in (0 ..< 5) {
-            frames.append(NSImage(imageLiteralResourceName: "cat_page\(i)"))
-        }
+        menubarAnimation.setupFrames()
         statusItem.menu = menu
         statusItem.button?.imagePosition = .imageRight
-        statusItem.button?.image = frames[cnt]
-        cnt = (cnt + 1) % frames.count
-        
+        statusItem.button?.image = menubarAnimation.getCurrentFrame()
         startRunning()
     }
 
@@ -59,28 +55,37 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func startRunning() {
-        cpuTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { (t) in
+        animationTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { (t) in
             self.usage = self.cpu.usageCPU()
-            self.interval = 0.02 * (100 - max(0.0, min(99.0, self.usage.value))) / 6
+            self.animationInterval = 0.02 * (100 - max(0.0, min(99.0, self.usage.value))) / 6
             self.statusItem.button?.title = self.isShowUsage ? self.usage.description : ""
         })
-        cpuTimer?.fire()
+        animationTimer?.fire()
         isRunning = true
         animate()
+        simulate()
     }
     
     func stopRunning() {
         isRunning = false
-        cpuTimer?.invalidate()
+        animationTimer?.invalidate()
     }
 
     func animate() {
-        statusItem.button?.image = frames[cnt]
-        cnt = (cnt + 1) % frames.count
-        furinSound.playSound(movingSpeed: cnt%frames.count)
+        statusItem.button?.image = menubarAnimation.getCurrentFrame()
+        menubarAnimation.proceed()
         if !isRunning { return }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + interval) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + animationInterval) {
             self.animate()
+        }
+    }
+    
+    func simulate() {
+        simulation.sound()
+        simulation.proceed(cpuUsage: cpu.usageCPU().value)
+        if !isRunning { return }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + simulation.getInterval()) {
+            self.simulate()
         }
     }
     
@@ -97,3 +102,46 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+fileprivate class MenubarAnimation {
+    private var frames = [NSImage]()
+    private var count: Int = 0
+    func setupFrames() {
+        for i in (0 ..< 5) {
+            frames.append(NSImage(imageLiteralResourceName: "cat_page\(i)"))
+        }
+    }
+    func proceed(){
+        count = (count + 1)%frames.count
+    }
+    func getCurrentFrame() -> NSImage {
+        return frames[count]
+    }
+}
+
+fileprivate class Simulation {
+    private let interval: Double = 1.0
+    private var count: Int = 0
+    // private let wind = Wind()
+    // private var furin = Furin()
+    private var furinSound = FurinSound()
+    // 風鈴の状態を進める
+    func proceed(cpuUsage: Double){
+        // 仮の実装
+        count = (count + 1)%4
+        // 本実装のイメージ
+        // furin.proceed( wind.getWind(CPU: cpuUsage), interval )
+    }
+    // 風鈴の状態に応じて音を鳴らす
+    func sound(){
+        // 仮の実装
+        furinSound.playSound(movingSpeed: count)
+        // 本実装のイメージ
+        // if furin.willSound() {
+        //     furinSound.playSound(movingSpeed: furin.speed)
+        // }
+    }
+    
+    func getInterval() -> Double {
+        return interval
+    }
+}
