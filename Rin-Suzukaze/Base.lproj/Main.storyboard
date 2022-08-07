@@ -12,15 +12,15 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Menubar RunCat" id="1Xt-HY-uBw">
+                            <menuItem title="Rin-Suzukaze" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Menubar RunCat" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Rin-Suzukaze" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About Menubar RunCat" id="5kV-Vb-QxS">
+                                        <menuItem title="About Rin-Suzukaze" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Quit Menubar RunCat" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Rin-Suzukaze" id="4sb-4s-VLi">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="Ve5-qx-rZc"/>
@@ -36,7 +36,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Menubar_RunCat" customModuleProvider="target">
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Rin_Suzukaze" customModuleProvider="target">
                     <connections>
                         <outlet property="menu" destination="p9w-zP-csW" id="lzr-DG-WJX"/>
                     </connections>
@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="-338" y="-100"/>
         </scene>
-        <!--Furin Status View Controller-->
+        <!--風鈴シミュレーション-->
         <scene sceneID="r1c-Bu-v20">
             <objects>
-                <viewController id="UXj-dV-o3P" customClass="FurinStatusViewController" customModule="Menubar_RunCat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="風鈴シミュレーション" id="UXj-dV-o3P" customClass="FurinStatusViewController" customModule="Rin_Suzukaze" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="oz8-0H-XVg">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>

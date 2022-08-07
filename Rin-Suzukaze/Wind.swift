@@ -1,9 +1,8 @@
 //
 //  Wind.swift
-//  Menubar RunCat
+//  Rin-Suzukaze
 //
-//  Created by 健一郎金子 on 2022/08/06.
-//  Copyright © 2022 Takuto Nakamura. All rights reserved.
+//  Copyright © 2022 Yafu Glass. All rights reserved.
 //
 
 
