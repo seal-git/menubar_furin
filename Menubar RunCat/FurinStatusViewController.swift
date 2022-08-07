@@ -16,7 +16,7 @@ class FurinStatusViewController: NSViewController {
     private let cpu: CPU = CPU.shared
     
     @IBOutlet weak var thetaText: NSTextFieldCell!
-    @IBOutlet weak var speedText: NSTextFieldCell!
+    @IBOutlet weak var movingSpeedText: NSTextFieldCell!
     @IBOutlet weak var windSpeedText: NSTextFieldCell!
     @IBOutlet weak var cpuUsageText: NSTextFieldCell!
     
@@ -36,7 +36,7 @@ class FurinStatusViewController: NSViewController {
 
     @objc func updateUI(){
         thetaText.stringValue = furin.getThetaDescription()
-        speedText.stringValue = furin.getMovingSpeedDescription()
+        movingSpeedText.stringValue = furin.getMovingSpeedDescription()
         windSpeedText.stringValue = wind.getCurrentWind().description
         cpuUsageText.stringValue = cpu.usageCPU().value.description
     }

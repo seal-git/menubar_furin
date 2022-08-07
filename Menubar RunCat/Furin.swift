@@ -106,6 +106,11 @@ class Furin {
         self.theta = theta
         self.v = v
         self.currentTime = currentTime
+        // 状態の変更を監視者に通知
+        NotificationCenter.default.post(
+            name: .updateFurinNotification,
+            object: nil
+        )
     }
     
     private func sound(_ hitList:[Hit]) {
