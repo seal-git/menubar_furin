@@ -7,8 +7,12 @@
 //
 
 import Foundation
+import Cocoa
+
  
 class Furin {
+    
+    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
     // 物理定数
     private let rho: Double = 1.225 // kg/m^3
@@ -66,7 +70,7 @@ class Furin {
         var vPrev = v
         var hitList: [Hit] = []
         while((thetaNew >= thetaEdge || thetaNew <= -thetaEdge) && dt > 0){
-            print(thetaNew, thetaEdge, thetaPrev, a)
+//            print(thetaNew, thetaEdge, thetaPrev, a)
             var vEdgeBefore = sqrt(vPrev * vPrev + 2 * a * (thetaEdge - thetaPrev)) // 傘に当たる直前の速度
             if thetaNew <= -thetaEdge {
                 vEdgeBefore = -sqrt(vPrev * vPrev + 2 * a * (-thetaEdge - thetaPrev))
@@ -106,6 +110,10 @@ class Furin {
             passedTime += hit.getDt()
         }
     }
+    
+    func getTheta() -> Double {
+        return theta
+    }
 }
 
 fileprivate class Hit {
@@ -122,3 +130,4 @@ fileprivate class Hit {
         return v
     }
 }
+
