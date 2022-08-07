@@ -19,6 +19,7 @@ class Wind {
     var windNew : Double = 0
     
     func getWind(CPU: Double) -> (Double) { // 10回同じ風を使う
+        
         if CPU.isNaN {
             return 0
         }
