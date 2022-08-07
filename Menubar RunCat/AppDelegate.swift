@@ -98,33 +98,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
 }
-//
-//fileprivate class MenubarAnimation {
-//    private var interval: Double = 1.0
-//    private var frames = [NSImage]()
-//    private var count: Int = 0
-//    func setupFrames() {
-//        for i in (1 ..< 7) {
-//            frames.append(NSImage(imageLiteralResourceName: "furin_\(i)C0"))
-//            for j in (1 ..< 5) {
-//                frames.append(NSImage(imageLiteralResourceName: "furin_\(i)L\(j)"))
-//                frames.append(NSImage(imageLiteralResourceName: "furin_\(i)R\(j)"))
-//            }
-//        }
-//    }
-//    func proceed(){
-//        count = (count + 1)%frames.count
-//    }
-//    func getCurrentFrame() -> NSImage {
-//        return frames[count]
-//    }
-//    func updateInterval(cpuUsage: Double){
-//        self.interval = 0.02 * (100 - max(0.0, min(99.0, cpuUsage))) / 6
-//    }
-//    func getInterval() -> Double {
-//        return interval
-//    }
-//}
 
 fileprivate class Simulation {
     private let interval: Double = 0.5
