@@ -123,6 +123,16 @@ class Furin {
     func getTheta() -> Double {
         return theta
     }
+    func getThetaDescription() -> String {
+        return roundDoubleValue(theta).description
+    }
+    func getMovingSpeedDescription() -> String {
+        return roundDoubleValue(v).description
+    }
+    private func roundDoubleValue(_ value: Double) -> Double {
+        let order: Double = 10000
+        return round(value*order)/order
+    }
 }
 
 fileprivate class Hit {

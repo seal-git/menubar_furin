@@ -41,6 +41,9 @@ class Wind {
         }
         return windNew
     }
+    func getCurrentWind() -> Double {
+        return windPrev
+    }
     
     private func calculateAverageWind(CPU: Double) -> (Double) {
         return CPU / 20 // 風速0~5m/s
