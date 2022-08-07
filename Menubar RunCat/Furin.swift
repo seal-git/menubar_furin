@@ -12,6 +12,10 @@ import Cocoa
  
 class Furin {
     
+    // 値の参照を簡略にするためシングルトン化
+    static let shared = Furin()
+    private init() {}
+    
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
     // 物理定数

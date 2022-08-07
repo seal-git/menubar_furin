@@ -102,8 +102,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 fileprivate class Simulation {
     private let interval: Double = 0.1
     private var count: Int = 0
-    private let wind = Wind()
-    private var furin = Furin()
+    private let wind: Wind = Wind.shared
+    private var furin: Furin = Furin.shared
     private var furinSound = FurinSound()
     private var theta: Double = 0
     // 風鈴の状態を進める
