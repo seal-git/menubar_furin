@@ -32,7 +32,7 @@ class Furin {
     
     // 抵抗係数
     private func cx(_ alpha: Double) -> Double {
-        return -1.0221 * pow(fabs(cos(alpha)) * width / height, 0.1063)
+        return 1.0221 * pow(fabs(cos(alpha)) * width / height, -0.1063)
     }
     
     
@@ -55,7 +55,7 @@ class Furin {
         var thetaNew = theta + v * dt + dv * dt * 0.5
         var vNew = v + dv
         // 傘に当たらなかった場合は状態を更新して終了
-        if thetaEdge >= thetaEdge && thetaEdge <= -thetaEdge {
+        if thetaEdge > thetaNew && thetaNew > -thetaEdge {
             updateStaus(thetaNew, vNew, Date())
             return
         }
@@ -66,7 +66,11 @@ class Furin {
         var vPrev = v
         var hitList: [Hit] = []
         while((thetaNew >= thetaEdge || thetaNew <= -thetaEdge) && dt > 0){
-            let vEdgeBefore = sqrt(vPrev * vPrev + 2 * a * (thetaEdge - thetaPrev)) // 傘に当たる直前の速度
+            print(thetaNew, thetaEdge, thetaPrev, a)
+            var vEdgeBefore = sqrt(vPrev * vPrev + 2 * a * (thetaEdge - thetaPrev)) // 傘に当たる直前の速度
+            if thetaNew <= -thetaEdge {
+                vEdgeBefore = -sqrt(vPrev * vPrev + 2 * a * (-thetaEdge - thetaPrev))
+            }
             let tBefore = (vEdgeBefore - vPrev) / a // 傘に当たるまでの時間
             hitList.append(Hit(dt: tBefore,v: vEdgeBefore))
             
