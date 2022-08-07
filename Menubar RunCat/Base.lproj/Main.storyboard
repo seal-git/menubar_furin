@@ -44,13 +44,13 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <menu id="p9w-zP-csW">
                     <items>
-                        <menuItem title="Show CPU Usage" id="igF-HN-MW8">
+                        <menuItem title="Show Status" id="oAH-uI-jd3">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="toggleShowUsage:" target="Voe-Tx-rLC" id="udX-at-y7i"/>
+                                <segue destination="aQr-ne-LyH" kind="modal" id="viC-Dm-95K"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="About Menubar RunCat" id="Brf-nN-lus">
+                        <menuItem title="About Rin-Suzukaze" id="Brf-nN-lus">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="showAbout:" target="Voe-Tx-rLC" id="WRn-u0-7zp"/>
@@ -93,35 +93,94 @@
             </objects>
             <point key="canvasLocation" x="-338" y="-100"/>
         </scene>
-        <!--View Controller-->
+        <!--Furin Status View Controller-->
         <scene sceneID="r1c-Bu-v20">
             <objects>
-                <viewController id="UXj-dV-o3P" sceneMemberID="viewController">
+                <viewController id="UXj-dV-o3P" customClass="FurinStatusViewController" customModule="Menubar_RunCat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="oz8-0H-XVg">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gND-Ii-vUf">
-                                <rect key="frame" x="172" y="156" width="137" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="振り子を真下からみた図" id="GEH-4z-B7a">
-                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKa-O6-wCm">
+                                <rect key="frame" x="40" y="211" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="風鈴の位置 [rad]:" id="iv6-t8-yIz">
+                                    <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <slider verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFl-NR-KfS">
-                                <rect key="frame" x="42" y="96" width="397" height="28"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="EQ5-li-Yo1"/>
-                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ANW-Ud-96p">
+                                <rect key="frame" x="163" y="182" width="149" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="[moving speed]" id="QNc-in-Z1K">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHO-0j-I0s">
+                                <rect key="frame" x="40" y="182" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="風鈴の速度 [m/s]:" id="iRZ-MN-jnP">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INK-o4-MnD">
+                                <rect key="frame" x="40" y="124" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="風速 [m/s]:" id="Zdc-Zb-Zfv">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZPa-bm-TUM">
+                                <rect key="frame" x="40" y="89" width="113" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="*CPU使用率 [%]:" id="4cz-Gj-PLX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aH2-lU-0KF">
+                                <rect key="frame" x="163" y="124" width="149" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="[wind speed]" id="cR8-tR-hGW">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="akJ-lr-COI">
+                                <rect key="frame" x="163" y="94" width="149" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="[usage]" id="wFO-5j-faA">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k64-TG-hua">
+                                <rect key="frame" x="163" y="211" width="149" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="[theta]" id="Y13-kN-QEB">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="gND-Ii-vUf" firstAttribute="top" secondItem="oz8-0H-XVg" secondAttribute="top" constant="98" id="X1u-ai-18Q"/>
-                            <constraint firstItem="gND-Ii-vUf" firstAttribute="centerX" secondItem="oz8-0H-XVg" secondAttribute="centerX" id="bLp-cV-rSC"/>
-                            <constraint firstItem="RFl-NR-KfS" firstAttribute="top" secondItem="gND-Ii-vUf" secondAttribute="bottom" constant="34" id="biW-dk-EbJ"/>
-                            <constraint firstItem="gND-Ii-vUf" firstAttribute="centerX" secondItem="RFl-NR-KfS" secondAttribute="centerX" id="jTu-ad-v5V"/>
-                            <constraint firstItem="RFl-NR-KfS" firstAttribute="leading" secondItem="oz8-0H-XVg" secondAttribute="leading" constant="44" id="uYN-AH-erE"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cpuUsageText" destination="wFO-5j-faA" id="bwA-KG-tkp"/>
+                        <outlet property="movingSpeedText" destination="QNc-in-Z1K" id="d3q-GE-QiO"/>
+                        <outlet property="thetaText" destination="Y13-kN-QEB" id="pHU-A8-Jbz"/>
+                        <outlet property="windSpeedText" destination="cR8-tR-hGW" id="i42-lY-jC8"/>
+                    </connections>
                 </viewController>
                 <customObject id="wk4-Sf-vfe" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

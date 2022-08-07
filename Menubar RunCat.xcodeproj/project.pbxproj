@@ -11,6 +11,8 @@
 		1CEF10A422F922DD00DAD355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF10A322F922DD00DAD355 /* Assets.xcassets */; };
 		1CEF10A722F922DD00DAD355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF10A522F922DD00DAD355 /* Main.storyboard */; };
 		1CEF10B022F9342600DAD355 /* CPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF10AF22F9342600DAD355 /* CPU.swift */; };
+		885C862A289FCC74009186A5 /* FurinStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C8629289FCC74009186A5 /* FurinStatusViewController.swift */; };
+		885C862C289FCCC3009186A5 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C862B289FCCC3009186A5 /* Notification.swift */; };
 		90BFB5DD289DFB88002FC30E /* チーン1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5DC289DFB88002FC30E /* チーン1.mp3 */; };
 		90BFB5DF289DFB91002FC30E /* チーン2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5DE289DFB91002FC30E /* チーン2.mp3 */; };
 		90BFB5E1289E0425002FC30E /* チーン.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5E0289E0425002FC30E /* チーン.mp3 */; };
@@ -31,6 +33,8 @@
 		1CEF10A822F922DD00DAD355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CEF10A922F922DD00DAD355 /* Menubar_RunCat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Menubar_RunCat.entitlements; sourceTree = "<group>"; };
 		1CEF10AF22F9342600DAD355 /* CPU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPU.swift; sourceTree = "<group>"; };
+		885C8629289FCC74009186A5 /* FurinStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FurinStatusViewController.swift; sourceTree = "<group>"; };
+		885C862B289FCCC3009186A5 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		90BFB5DC289DFB88002FC30E /* チーン1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン1.mp3"; sourceTree = "<group>"; };
 		90BFB5DE289DFB91002FC30E /* チーン2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン2.mp3"; sourceTree = "<group>"; };
 		90BFB5E0289E0425002FC30E /* チーン.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン.mp3"; sourceTree = "<group>"; };
@@ -74,7 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				1CEF109F22F922DB00DAD355 /* AppDelegate.swift */,
+				885C8629289FCC74009186A5 /* FurinStatusViewController.swift */,
 				90BFB5E4289E0A89002FC30E /* Wind.swift */,
+				885C862B289FCCC3009186A5 /* Notification.swift */,
 				AA98563B289FC91E008C13B9 /* mp3 */,
 				90BFB5E6289E7137002FC30E /* FurinSound.swift */,
 				90BFB5F4289F6090002FC30E /* Furin.swift */,
@@ -173,8 +179,10 @@
 				1CEF10B022F9342600DAD355 /* CPU.swift in Sources */,
 				1CEF10A022F922DB00DAD355 /* AppDelegate.swift in Sources */,
 				90BFB5F5289F6090002FC30E /* Furin.swift in Sources */,
+				885C862C289FCCC3009186A5 /* Notification.swift in Sources */,
 				90BFB5E5289E0A89002FC30E /* Wind.swift in Sources */,
 				90BFB5F9289F6B69002FC30E /* MenubarAnimation.swift in Sources */,
+				885C862A289FCC74009186A5 /* FurinStatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

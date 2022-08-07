@@ -106,6 +106,11 @@ class Furin {
         self.theta = theta
         self.v = v
         self.currentTime = currentTime
+        // 状態の変更を監視者に通知
+        NotificationCenter.default.post(
+            name: .updateFurinNotification,
+            object: nil
+        )
     }
     
     private func sound(_ hitList:[Hit]) {
@@ -122,6 +127,16 @@ class Furin {
     
     func getTheta() -> Double {
         return theta
+    }
+    func getThetaDescription() -> String {
+        return roundDoubleValue(theta).description
+    }
+    func getMovingSpeedDescription() -> String {
+        return roundDoubleValue(v).description
+    }
+    private func roundDoubleValue(_ value: Double) -> Double {
+        let order: Double = 10000
+        return round(value*order)/order
     }
 }
 
