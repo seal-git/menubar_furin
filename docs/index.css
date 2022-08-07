@@ -1,0 +1,77 @@
+@font-face
+{
+font-family:"源ノ角ゴシック Normal" ;
+src: url('https://cdn.leafscape.be/SourceHanSansJP/SourceHanSansJP-Normal_web.woff')
+     format("woff");
+}
+body{
+    padding: 20px;
+    font-family: "源ノ角ゴシック Normal", sans-serif;
+}.title-area{
+    margin: 20px;
+}
+.title{
+    font-size: 48px;
+}
+
+.subtitle{
+    font-size: 20px;
+}
+
+.link-area{
+    display: flex;
+}
+.link{
+    font-size: 20px;
+    margin: 30px;
+}
+
+.button-area{
+    border-radius: 100px;
+    padding: 10px;
+}
+
+.dmg-button{
+    background-color: #6cea88;
+    display: inline-block;
+    border-radius: 100px;
+    box-shadow: 2px 2px 2px;
+}
+
+.dmg-button > a{
+    text-decoration: none;
+}
+
+.dmg-text{
+    padding: 10px 30px 10px 30px;
+}
+
+.github-button{
+    border: solid;
+    display: inline-block;
+    border-radius: 100px;
+    box-sizing: border-box;
+}
+
+.github-text {
+    padding: 10px 20px 10px 20px;
+}
+
+.github-button > a{
+    text-decoration: none;
+}
+
+
+.description-area{
+    margin: 20px;
+}
+.description-title{
+    font-size: 36px;
+    margin: 10px;
+}
+
+.description-body{
+    font-size: 20px;
+    padding-left: 30px;
+}
+
