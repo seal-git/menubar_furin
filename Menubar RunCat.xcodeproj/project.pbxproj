@@ -20,6 +20,7 @@
 		90BFB5F5289F6090002FC30E /* Furin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFB5F4289F6090002FC30E /* Furin.swift */; };
 		90BFB5F7289F64B8002FC30E /* furin in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5F6289F64B8002FC30E /* furin */; };
 		90BFB5F9289F6B69002FC30E /* MenubarAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFB5F8289F6B69002FC30E /* MenubarAnimation.swift */; };
+		AA98563C289FC91E008C13B9 /* mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA98563B289FC91E008C13B9 /* mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		90BFB5F4289F6090002FC30E /* Furin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Furin.swift; sourceTree = "<group>"; };
 		90BFB5F6289F64B8002FC30E /* furin */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = furin; path = resources/furin; sourceTree = SOURCE_ROOT; };
 		90BFB5F8289F6B69002FC30E /* MenubarAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarAnimation.swift; sourceTree = "<group>"; };
+		AA98563B289FC91E008C13B9 /* mp3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				1CEF109F22F922DB00DAD355 /* AppDelegate.swift */,
 				90BFB5E4289E0A89002FC30E /* Wind.swift */,
+				AA98563B289FC91E008C13B9 /* mp3 */,
 				90BFB5E6289E7137002FC30E /* FurinSound.swift */,
 				90BFB5F4289F6090002FC30E /* Furin.swift */,
 				90BFB5F8289F6B69002FC30E /* MenubarAnimation.swift */,
@@ -151,6 +154,7 @@
 				1CEF10A422F922DD00DAD355 /* Assets.xcassets in Resources */,
 				1CEF10A722F922DD00DAD355 /* Main.storyboard in Resources */,
 				90BFB5DF289DFB91002FC30E /* チーン2.mp3 in Resources */,
+				AA98563C289FC91E008C13B9 /* mp3 in Resources */,
 				90BFB5E1289E0425002FC30E /* チーン.mp3 in Resources */,
 				90BFB5DD289DFB88002FC30E /* チーン1.mp3 in Resources */,
 				90BFB5F7289F64B8002FC30E /* furin in Resources */,

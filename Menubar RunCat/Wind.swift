@@ -32,7 +32,8 @@ class Wind {
             count += 1
         }
         else {
-            windNew = c * calculateAverageWind(CPU: CPU) * pow( -log(1 + EPS - Double.random(in:0...1)), 1/k)
+            direction = array.randomElement() ?? 0
+            windNew = c * calculateAverageWind(CPU: CPU) * pow( -log(1 + EPS - Double.random(in:0...1)), 1/k) * direction
             windPrev = windNew
             count = 1
         }
