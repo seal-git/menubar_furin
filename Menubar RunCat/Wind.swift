@@ -18,9 +18,11 @@ class Wind {
     private let c : Double = 0.166
     private let k : Double = 1.46
     private let EPS : Double = pow(10,-10)
+    private let array : [Double] = [-1, 0, 1]
     private var count : Int = 0
     private var windPrev : Double = 0
     private var windNew : Double = 0
+    private var direction : Double = 1
     
     func getWind(CPU: Double) -> (Double) { // 10回同じ風を使う
         
