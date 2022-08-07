@@ -71,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func animate() {
         statusItem.button?.image = menubarAnimation.getCurrentFrame()
-        menubarAnimation.proceed()
+        menubarAnimation.proceed(theta: simulation.getTheta())
         if !isRunning { return }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + menubarAnimation.getInterval()) {
             self.animate()
@@ -99,40 +99,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
-fileprivate class MenubarAnimation {
-    private var interval: Double = 1.0
-    private var frames = [NSImage]()
-    private var count: Int = 0
-    func setupFrames() {
-        for i in (0 ..< 5) {
-            frames.append(NSImage(imageLiteralResourceName: "cat_page\(i)"))
-        }
-    }
-    func proceed(){
-        count = (count + 1)%frames.count
-    }
-    func getCurrentFrame() -> NSImage {
-        return frames[count]
-    }
-    func updateInterval(cpuUsage: Double){
-        self.interval = 0.02 * (100 - max(0.0, min(99.0, cpuUsage))) / 6
-    }
-    func getInterval() -> Double {
-        return interval
-    }
-}
-
 fileprivate class Simulation {
     private let interval: Double = 0.5
     private var count: Int = 0
      private let wind = Wind()
      private var furin = Furin()
     private var furinSound = FurinSound()
+    private var theta: Double = 0
     // 風鈴の状態を進める
     func proceed(cpuUsage: Double){
         furin.proceed( windSpeed: 0.01 )
+        theta = furin.getTheta()
     }
     func getInterval() -> Double {
         return interval
+    }
+    func getTheta() -> Double {
+        return theta
     }
 }

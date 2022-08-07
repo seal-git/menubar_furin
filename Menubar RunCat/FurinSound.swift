@@ -54,7 +54,7 @@ fileprivate class Player {
             audioPlayer.delegate = self as? AVAudioPlayerDelegate
             // 音声の再生
             audioPlayer.play()
-            print("play:" + name)
+//            print("play:" + name)
         } catch {
         }
     }
