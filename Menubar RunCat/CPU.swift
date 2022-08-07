@@ -12,6 +12,7 @@ public class CPU {
     
     private let loadInfoCount: mach_msg_type_number_t!
     private var loadPrevious = host_cpu_load_info()
+    private var usagePrevious: Double = 0
     
     // シングルトン化
     static let shared = CPU()
@@ -42,13 +43,23 @@ public class CPU {
         loadPrevious = load
         
         let totalTicks = sysDiff + userDiff + idleDiff + niceDiff
+        print(sysDiff, userDiff, idleDiff, niceDiff)
+        if totalTicks == 0 {
+            return (usagePrevious, makeDescription(usagePrevious))
+        }
         let sys  = 100.0 * sysDiff / totalTicks
         let user = 100.0 * userDiff / totalTicks
         
         let value: Double = round((sys + user) * 10.0) / 10.0
-        let description: String = (value >= 100.0) ? "100↑%" : ((value < 10.0 ? " " : "") + String(value)) + "% "
+        let description: String = makeDescription(value)
         
+        usagePrevious = value
         return (value, description)
+    }
+    
+    private func makeDescription(_ value : Double) -> String {
+        let description: String = (value >= 100.0) ? "100↑%" : ((value < 10.0 ? " " : "") + String(value)) + "% "
+        return description
     }
     
 }

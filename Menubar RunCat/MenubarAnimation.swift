@@ -51,7 +51,7 @@ class MenubarAnimation {
             frameName = "furin_\(count)R5"
         }
         
-        print("theta:", theta, "count:", count, "frameName:", frameName)
+//        print("theta:", theta, "count:", count, "frameName:", frameName)
     }
     func getCurrentFrame() -> NSImage {
         return frames[frameName]!
