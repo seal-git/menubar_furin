@@ -1,2 +1,5 @@
 .DS_Store
 .idea
+*/*.ipynb
+.ipynb_checkpoints
+create_sound/mp3/
