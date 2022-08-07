@@ -33,7 +33,6 @@ class FurinSound {
     // 再生する音源名を決めるファイル
     // ちゃんとしたロジックは後で考える
     func decideSound(movingSpeed: Double) -> String {
-        print("moving", movingSpeed)
         if  0.01 <= abs(movingSpeed) && abs(movingSpeed) <= 1.27 {
             number = String(format: "%.0f",abs(movingSpeed * 100))
             return number
