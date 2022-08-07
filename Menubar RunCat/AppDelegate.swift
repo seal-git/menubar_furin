@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let nc = NSWorkspace.shared.notificationCenter
     private var isRunning: Bool = false
-    private let cpu = CPU()
+    private let cpu = CPU.shared
     private var applicationTimer: Timer? = nil
     private var usage: (value: Double, description: String) = (0.0, "")
     private var isShowUsage: Bool = false

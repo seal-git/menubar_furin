@@ -13,7 +13,9 @@ public class CPU {
     private let loadInfoCount: mach_msg_type_number_t!
     private var loadPrevious = host_cpu_load_info()
     
-    init() {
+    // シングルトン化
+    static let shared = CPU()
+    private init() {
         loadInfoCount = UInt32(MemoryLayout<host_cpu_load_info_data_t>.size / MemoryLayout<integer_t>.size)
     }
     
