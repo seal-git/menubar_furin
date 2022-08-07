@@ -11,14 +11,16 @@ import Foundation
 
 class Wind {
     
-    let c : Double = 0.166
-    let k : Double = 1.46
-    let EPS : Double = pow(10,-10)
-    let array : [Double] = [-1, 0, 1]
-    var count : Int = 0
-    var windPrev : Double = 0
-    var windNew : Double = 0
-    var direction : Double = 1
+    // 値の参照を簡略にするためシングルトン化
+    static let shared: Wind = Wind()
+    private init() {}
+    
+    private let c : Double = 0.166
+    private let k : Double = 1.46
+    private let EPS : Double = pow(10,-10)
+    private var count : Int = 0
+    private var windPrev : Double = 0
+    private var windNew : Double = 0
     
     func getWind(CPU: Double) -> (Double) { // 10回同じ風を使う
         
@@ -38,7 +40,7 @@ class Wind {
         return windNew
     }
     
-    func calculateAverageWind(CPU: Double) -> (Double) {
+    private func calculateAverageWind(CPU: Double) -> (Double) {
         return CPU / 20 // 風速0~5m/s
     }
 }

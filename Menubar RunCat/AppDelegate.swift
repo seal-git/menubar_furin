@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let nc = NSWorkspace.shared.notificationCenter
     private var isRunning: Bool = false
-    private let cpu = CPU()
+    private let cpu = CPU.shared
     private var applicationTimer: Timer? = nil
     private var usage: (value: Double, description: String) = (0.0, "")
     private var isShowUsage: Bool = false
@@ -102,8 +102,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 fileprivate class Simulation {
     private let interval: Double = 0.1
     private var count: Int = 0
-    private let wind = Wind()
-    private var furin = Furin()
+    private let wind: Wind = Wind.shared
+    private var furin: Furin = Furin.shared
     private var furinSound = FurinSound()
     private var theta: Double = 0
     // 風鈴の状態を進める
