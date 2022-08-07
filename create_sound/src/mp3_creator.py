@@ -8,15 +8,22 @@ from pydub import AudioSegment
 args = sys.argv
 input_file = args[1]
 output_mp3 = args[2]
-start_width = float(args[3])
-end_width = float(args[4])
-duration = float(args[5])
+db = args[3]
+num = args[4]
+sign = args[5]
 
 ext = os.path.splitext(input_file)[1][1:]
 
-volume_list = np.arange(start_width, end_width, duration)
 base_sound = AudioSegment.from_file(input_file, format=ext)  # 音声を読み込み
-for i in volume_list:
-    edit_sound = base_sound + i
-    edit_sound.export(f"../mp3/{output_mp3}_{i}.mp3", format="mp3")
+for i in range(int(num)):
+    if (i == 0):
+        edit_sound = base_sound
+        edit_sound.export(f"../mp3/{output_mp3}_{i}.mp3", format="mp3")
+    else:
+        if (sign == "plus"):
+            edit_sound = base_sound + float(db)
+            edit_sound.export(f"../mp3/{output_mp3}_{i}.mp3", format="mp3")
+        elif (sign == "minus"):
+            edit_sound = base_sound - float(db)
+            edit_sound.export(f"../mp3/{output_mp3}_-{i}.mp3", format="mp3")
 
