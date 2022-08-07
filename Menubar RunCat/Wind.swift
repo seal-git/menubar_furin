@@ -14,9 +14,11 @@ class Wind {
     let c : Double = 0.166
     let k : Double = 1.46
     let EPS : Double = pow(10,-10)
+    let array : [Double] = [-1, 0, 1]
     var count : Int = 0
     var windPrev : Double = 0
     var windNew : Double = 0
+    var direction : Double = 1
     
     func getWind(CPU: Double) -> (Double) { // 10回同じ風を使う
         
@@ -28,7 +30,8 @@ class Wind {
             count += 1
         }
         else {
-            windNew = c * calculateAverageWind(CPU: CPU) * pow( -log(1 + EPS - Double.random(in:0...1)), 1/k)
+            direction = array.randomElement() ?? 0
+            windNew = c * calculateAverageWind(CPU: CPU) * pow( -log(1 + EPS - Double.random(in:0...1)), 1/k) * direction
             windPrev = windNew
             count = 1
         }
