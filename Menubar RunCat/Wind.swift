@@ -16,12 +16,22 @@ class Wind {
     let EPS : Double = pow(10,-10)
     var count : Int = 0
     var windPrev : Double = 0
+    var windNew : Double = 0
     
-    func getWind(CPU: Double) -> (Double) {
+    func getWind(CPU: Double) -> (Double) { // 10回同じ風を使う
         if CPU.isNaN {
             return 0
         }
-        return c * calculateAverageWind(CPU: CPU) * pow( -log(1 + EPS - Double.random(in:0...1)), 1/k)
+        if  0 < count && count < 10 {
+            windNew = windPrev
+            count += 1
+        }
+        else {
+            windNew = c * calculateAverageWind(CPU: CPU) * pow( -log(1 + EPS - Double.random(in:0...1)), 1/k)
+            windPrev = windNew
+            count = 1
+        }
+        return windNew
     }
     
     func calculateAverageWind(CPU: Double) -> (Double) {
