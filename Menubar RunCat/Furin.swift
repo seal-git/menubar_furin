@@ -114,7 +114,7 @@ class Furin {
         for hit in hitList {
             let nextSoundTime = DispatchTime.now() + passedTime + hit.getDt()
             DispatchQueue.main.asyncAfter(deadline: nextSoundTime) {
-                self.furinSound.playSound(movingSpeed: Int(hit.getV()))
+                self.furinSound.playSound(movingSpeed: hit.getV())
             }
             passedTime += hit.getDt()
         }

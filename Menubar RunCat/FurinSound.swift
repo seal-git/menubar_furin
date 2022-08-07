@@ -12,9 +12,10 @@ import AVFoundation
 class FurinSound {
     private var players: [Player] = []
     private let maxPlayerNumber: Int = 10
+    private var number: String = ""
     
     // 風鈴の速度を入力として音を鳴らす予定
-    func playSound(movingSpeed: Int){
+    func playSound(movingSpeed: Double){
         // 複数の音を重ねて鳴らすためにはそれぞれの音を別々のプレイヤーで鳴らす必要がある
         // 現実装では音を鳴らすたびにプレイヤーを生成する方針で書いている
         // 関数内でプレイヤーを生成するだけだと関数終了直後にプレイヤーが破棄されるため、リストに放り込んで保持している
@@ -31,11 +32,17 @@ class FurinSound {
     
     // 再生する音源名を決めるファイル
     // ちゃんとしたロジックは後で考える
-    func decideSound(movingSpeed: Int) -> String {
-        
-        if movingSpeed==0 { return "50" }
-        if movingSpeed==1 { return "20" }
-        return "128" // 空文字列
+    func decideSound(movingSpeed: Double) -> String {
+        if  0.01 <= abs(movingSpeed) && abs(movingSpeed) <= 1.27 {
+            number = String(format: "%.0f",abs(movingSpeed * 100))
+            return number
+        }
+        else if abs(movingSpeed) < 0.01 {
+            return "1"
+        }
+        else {
+            return "128"
+        }
     }
 }
 
