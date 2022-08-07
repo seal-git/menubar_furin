@@ -32,9 +32,10 @@ class FurinSound {
     // 再生する音源名を決めるファイル
     // ちゃんとしたロジックは後で考える
     func decideSound(movingSpeed: Int) -> String {
-        if movingSpeed==0 { return "チーン" }
-        if movingSpeed==1 { return "チーン弱" }
-        return String() // 空文字列
+        
+        if movingSpeed==0 { return "50" }
+        if movingSpeed==1 { return "20" }
+        return "128" // 空文字列
     }
 }
 
@@ -43,7 +44,7 @@ class FurinSound {
 fileprivate class Player {
     private var audioPlayer: AVAudioPlayer!
     func playSound(name: String) {
-        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+        guard let path = Bundle.main.path(forResource: "mp3/" + name, ofType: "mp3") else {
             print("音源ファイルが見つかりません")
             return
         }

@@ -19,7 +19,7 @@ class Furin {
     private let g: Double = 9.8 // m/s^2
 
     // 風鈴
-    private let m: Double = 0.008 // kg
+    private let m: Double = 0.008// kg
     
     // 短冊
     private let width: Double = 0.035 // m
@@ -52,7 +52,7 @@ class Furin {
         let s = width * height * fabs(cos(alpha))
 
         // 加速度
-        let a = windSpeed * windSpeed * rho * s * cx(alpha) * cos(theta) * 0.5 / m - g * sin(theta)
+        let a = (windSpeed * windSpeed * rho * s * cx(alpha) * cos(theta) * 0.5 / m - g * sin(theta)) - 100 * s * cx(alpha) * (v - windSpeed)
         let dv = a * dt
 
         // 次の状態
@@ -69,8 +69,7 @@ class Furin {
         var thetaPrev = theta
         var vPrev = v
         var hitList: [Hit] = []
-        while((thetaNew >= thetaEdge || thetaNew <= -thetaEdge) && dt > 0){
-//            print(thetaNew, thetaEdge, thetaPrev, a)
+        while((thetaNew >= thetaEdge || thetaNew <= -thetaEdge)){
             var vEdgeBefore = sqrt(vPrev * vPrev + 2 * a * (thetaEdge - thetaPrev)) // 傘に当たる直前の速度
             if thetaNew <= -thetaEdge {
                 vEdgeBefore = -sqrt(vPrev * vPrev + 2 * a * (-thetaEdge - thetaPrev))
@@ -85,6 +84,12 @@ class Furin {
             dtPrev = tAfter
             thetaPrev = thetaEdge
             vPrev = vEdgeAfter
+            
+            if hitList.count > 3 {
+                thetaNew = thetaEdge
+                vNew = vEdgeAfter
+                break
+            }
         }
         // 状態を更新
         updateStaus(thetaNew, vNew, Date())

@@ -100,16 +100,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 fileprivate class Simulation {
-    private let interval: Double = 0.5
+    private let interval: Double = 0.1
     private var count: Int = 0
-     private let wind = Wind()
-     private var furin = Furin()
+    private let wind = Wind()
+    private var furin = Furin()
     private var furinSound = FurinSound()
     private var theta: Double = 0
     // 風鈴の状態を進める
     func proceed(cpuUsage: Double){
-        furin.proceed( windSpeed: 0.01 )
         theta = furin.getTheta()
+        furin.proceed( windSpeed: wind.getWind(CPU: cpuUsage) )
     }
     func getInterval() -> Double {
         return interval
