@@ -1,9 +1,8 @@
 //
 //  Notification.swift
-//  Menubar RunCat
+//  Rin-Suzukaze
 //
-//  Created by Takumi Nakai on 2022/08/07.
-//  Copyright © 2022 Takuto Nakamura. All rights reserved.
+//  Copyright © 2022 Yafu Glass. All rights reserved.
 //
 
 import Foundation

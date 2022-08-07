@@ -3,7 +3,7 @@
 //  Menubar RunCat
 //
 //  Created by Takuto Nakamura on 2019/08/06.
-//  Copyright © 2019 Takuto Nakamura. All rights reserved.
+//  Copyright © 2022 Yafu Glass. All rights reserved.
 //
 
 import Cocoa

@@ -13,10 +13,6 @@
 		1CEF10B022F9342600DAD355 /* CPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF10AF22F9342600DAD355 /* CPU.swift */; };
 		885C862A289FCC74009186A5 /* FurinStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C8629289FCC74009186A5 /* FurinStatusViewController.swift */; };
 		885C862C289FCCC3009186A5 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C862B289FCCC3009186A5 /* Notification.swift */; };
-		90BFB5DD289DFB88002FC30E /* チーン1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5DC289DFB88002FC30E /* チーン1.mp3 */; };
-		90BFB5DF289DFB91002FC30E /* チーン2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5DE289DFB91002FC30E /* チーン2.mp3 */; };
-		90BFB5E1289E0425002FC30E /* チーン.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5E0289E0425002FC30E /* チーン.mp3 */; };
-		90BFB5E3289E04AD002FC30E /* チーン弱.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 90BFB5E2289E04AD002FC30E /* チーン弱.mp3 */; };
 		90BFB5E5289E0A89002FC30E /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFB5E4289E0A89002FC30E /* Wind.swift */; };
 		90BFB5E7289E7137002FC30E /* FurinSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFB5E6289E7137002FC30E /* FurinSound.swift */; };
 		90BFB5F5289F6090002FC30E /* Furin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BFB5F4289F6090002FC30E /* Furin.swift */; };
@@ -26,19 +22,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1CEF109C22F922DB00DAD355 /* Menubar RunCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Menubar RunCat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CEF109F22F922DB00DAD355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1CEF109C22F922DB00DAD355 /* Rin-Suzukaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rin-Suzukaze.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CEF109F22F922DB00DAD355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Rin-Suzukaze/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		1CEF10A322F922DD00DAD355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CEF10A622F922DD00DAD355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CEF10A822F922DD00DAD355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CEF10A922F922DD00DAD355 /* Menubar_RunCat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Menubar_RunCat.entitlements; sourceTree = "<group>"; };
+		1CEF10A922F922DD00DAD355 /* Rin-Suzukaze.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rin-Suzukaze.entitlements"; sourceTree = "<group>"; };
 		1CEF10AF22F9342600DAD355 /* CPU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPU.swift; sourceTree = "<group>"; };
 		885C8629289FCC74009186A5 /* FurinStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FurinStatusViewController.swift; sourceTree = "<group>"; };
 		885C862B289FCCC3009186A5 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		90BFB5DC289DFB88002FC30E /* チーン1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン1.mp3"; sourceTree = "<group>"; };
-		90BFB5DE289DFB91002FC30E /* チーン2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン2.mp3"; sourceTree = "<group>"; };
-		90BFB5E0289E0425002FC30E /* チーン.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン.mp3"; sourceTree = "<group>"; };
-		90BFB5E2289E04AD002FC30E /* チーン弱.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "チーン弱.mp3"; sourceTree = "<group>"; };
 		90BFB5E4289E0A89002FC30E /* Wind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
 		90BFB5E6289E7137002FC30E /* FurinSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FurinSound.swift; sourceTree = "<group>"; };
 		90BFB5F4289F6090002FC30E /* Furin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Furin.swift; sourceTree = "<group>"; };
@@ -61,7 +53,7 @@
 		1CEF109322F922DB00DAD355 = {
 			isa = PBXGroup;
 			children = (
-				1CEF109E22F922DB00DAD355 /* Menubar RunCat */,
+				1CEF109E22F922DB00DAD355 /* Rin-Suzukaze */,
 				1CEF109D22F922DB00DAD355 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,12 +61,12 @@
 		1CEF109D22F922DB00DAD355 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1CEF109C22F922DB00DAD355 /* Menubar RunCat.app */,
+				1CEF109C22F922DB00DAD355 /* Rin-Suzukaze.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1CEF109E22F922DB00DAD355 /* Menubar RunCat */ = {
+		1CEF109E22F922DB00DAD355 /* Rin-Suzukaze */ = {
 			isa = PBXGroup;
 			children = (
 				1CEF109F22F922DB00DAD355 /* AppDelegate.swift */,
@@ -90,21 +82,17 @@
 				90BFB5F6289F64B8002FC30E /* furin */,
 				1CEF10A522F922DD00DAD355 /* Main.storyboard */,
 				1CEF10A822F922DD00DAD355 /* Info.plist */,
-				1CEF10A922F922DD00DAD355 /* Menubar_RunCat.entitlements */,
-				90BFB5DC289DFB88002FC30E /* チーン1.mp3 */,
-				90BFB5DE289DFB91002FC30E /* チーン2.mp3 */,
-				90BFB5E0289E0425002FC30E /* チーン.mp3 */,
-				90BFB5E2289E04AD002FC30E /* チーン弱.mp3 */,
+				1CEF10A922F922DD00DAD355 /* Rin-Suzukaze.entitlements */,
 			);
-			path = "Menubar RunCat";
+			path = "Rin-Suzukaze";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1CEF109B22F922DB00DAD355 /* Menubar RunCat */ = {
+		1CEF109B22F922DB00DAD355 /* Rin-Suzukaze */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1CEF10AC22F922DD00DAD355 /* Build configuration list for PBXNativeTarget "Menubar RunCat" */;
+			buildConfigurationList = 1CEF10AC22F922DD00DAD355 /* Build configuration list for PBXNativeTarget "Rin-Suzukaze" */;
 			buildPhases = (
 				1CEF109822F922DB00DAD355 /* Sources */,
 				1CEF109922F922DB00DAD355 /* Frameworks */,
@@ -114,9 +102,9 @@
 			);
 			dependencies = (
 			);
-			name = "Menubar RunCat";
+			name = "Rin-Suzukaze";
 			productName = "Menubar RunCat";
-			productReference = 1CEF109C22F922DB00DAD355 /* Menubar RunCat.app */;
+			productReference = 1CEF109C22F922DB00DAD355 /* Rin-Suzukaze.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,14 +115,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1200;
-				ORGANIZATIONNAME = "Takuto Nakamura";
+				ORGANIZATIONNAME = "Yafu Glass";
 				TargetAttributes = {
 					1CEF109B22F922DB00DAD355 = {
 						CreatedOnToolsVersion = 10.3;
 					};
 				};
 			};
-			buildConfigurationList = 1CEF109722F922DB00DAD355 /* Build configuration list for PBXProject "Menubar RunCat" */;
+			buildConfigurationList = 1CEF109722F922DB00DAD355 /* Build configuration list for PBXProject "Rin-Suzukaze" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -147,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1CEF109B22F922DB00DAD355 /* Menubar RunCat */,
+				1CEF109B22F922DB00DAD355 /* Rin-Suzukaze */,
 			);
 		};
 /* End PBXProject section */
@@ -159,12 +147,8 @@
 			files = (
 				1CEF10A422F922DD00DAD355 /* Assets.xcassets in Resources */,
 				1CEF10A722F922DD00DAD355 /* Main.storyboard in Resources */,
-				90BFB5DF289DFB91002FC30E /* チーン2.mp3 in Resources */,
 				AA98563C289FC91E008C13B9 /* mp3 in Resources */,
-				90BFB5E1289E0425002FC30E /* チーン.mp3 in Resources */,
-				90BFB5DD289DFB88002FC30E /* チーン1.mp3 in Resources */,
 				90BFB5F7289F64B8002FC30E /* furin in Resources */,
-				90BFB5E3289E04AD002FC30E /* チーン弱.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,18 +305,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Menubar RunCat/Menubar_RunCat.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Rin-Suzukaze/Rin-Suzukaze.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0.9.0;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
-				INFOPLIST_FILE = "Menubar RunCat/Info.plist";
+				INFOPLIST_FILE = "Rin-Suzukaze/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kyome.menubar-runcat";
+				MARKETING_VERSION = 0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yafu-glass.rin-suzukaze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -342,18 +328,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Menubar RunCat/Menubar_RunCat.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Rin-Suzukaze/Rin-Suzukaze.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0.9.0;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
-				INFOPLIST_FILE = "Menubar RunCat/Info.plist";
+				INFOPLIST_FILE = "Rin-Suzukaze/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kyome.menubar-runcat";
+				MARKETING_VERSION = 0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yafu-glass.rin-suzukaze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -362,7 +350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1CEF109722F922DB00DAD355 /* Build configuration list for PBXProject "Menubar RunCat" */ = {
+		1CEF109722F922DB00DAD355 /* Build configuration list for PBXProject "Rin-Suzukaze" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1CEF10AA22F922DD00DAD355 /* Debug */,
@@ -371,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1CEF10AC22F922DD00DAD355 /* Build configuration list for PBXNativeTarget "Menubar RunCat" */ = {
+		1CEF10AC22F922DD00DAD355 /* Build configuration list for PBXNativeTarget "Rin-Suzukaze" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1CEF10AD22F922DD00DAD355 /* Debug */,
