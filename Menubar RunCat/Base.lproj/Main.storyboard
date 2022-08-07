@@ -120,7 +120,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHO-0j-I0s">
-                                <rect key="frame" x="40" y="190" width="113" height="13"/>
+                                <rect key="frame" x="40" y="182" width="113" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="風鈴の速度 [m/s]:" id="iRZ-MN-jnP">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -129,7 +129,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INK-o4-MnD">
-                                <rect key="frame" x="40" y="132" width="113" height="13"/>
+                                <rect key="frame" x="40" y="124" width="113" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="風速 [m/s]:" id="Zdc-Zb-Zfv">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -138,7 +138,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZPa-bm-TUM">
-                                <rect key="frame" x="40" y="93" width="113" height="23"/>
+                                <rect key="frame" x="40" y="89" width="113" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="*CPU使用率 [%]:" id="4cz-Gj-PLX">
                                     <font key="font" metaFont="system"/>

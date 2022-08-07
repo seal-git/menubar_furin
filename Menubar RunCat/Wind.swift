@@ -44,8 +44,14 @@ class Wind {
     func getCurrentWind() -> Double {
         return windPrev
     }
+    func getCurrentWindSpeedDescription() -> String {
+        let order: Double = 10000
+        let value: Double = round(windPrev*order)/order
+        return value.description
+    }
     
     private func calculateAverageWind(CPU: Double) -> (Double) {
         return CPU / 20 // 風速0~5m/s
     }
 }
+

@@ -37,7 +37,7 @@ class FurinStatusViewController: NSViewController {
     @objc func updateUI(){
         thetaText.stringValue = furin.getThetaDescription()
         movingSpeedText.stringValue = furin.getMovingSpeedDescription()
-        windSpeedText.stringValue = wind.getCurrentWind().description
+        windSpeedText.stringValue = wind.getCurrentWindSpeedDescription()
         cpuUsageText.stringValue = cpu.usageCPU().value.description
     }
 }
