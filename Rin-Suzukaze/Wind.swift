@@ -47,7 +47,7 @@ class Wind {
     }
     
     private func calculateAverageWind(CPU: Double) -> (Double) {
-        return CPU / 20 // 風速0~5m/s
+        return CPU / 4 // 風速0~5m/s
     }
 }
 
