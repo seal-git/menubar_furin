@@ -9,3 +9,6 @@ https://seal-git.github.io/menubar_furin/
 
 `Swift` `menubar`
 
+# license
+改変元: menubar_runcat (https://github.com/Kyome22/menubar_runcat)
+ライセンスは改変元に準拠します
