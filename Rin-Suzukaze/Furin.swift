@@ -44,7 +44,7 @@ class Furin {
 
     private func tNewton(t0: Double, x: Double, a: Double, k: Double, c1: Double, c2: Double) -> Double {
         let c3 = -k / m
-        let c4 = - c1 * m / k
+        let c4 = -c1 * m / k
         let c5 = m * a / k
         let c6 = c2 - x
 
