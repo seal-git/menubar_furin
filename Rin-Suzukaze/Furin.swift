@@ -22,7 +22,7 @@ class Furin {
     private let g: Double = 9.8 // m/s^2
 
     // 風鈴
-    private let m: Double = 0.008// kg
+    private let m: Double = 0.004// kg
     
     // 短冊
     private let width: Double = 0.035 // m
@@ -30,16 +30,32 @@ class Furin {
     
     // 傘
     private let e: Double = 0.94 //
-    private let thetaEdge: Double = 0.5 // rad
+    private let thetaEdge: Double = 0.3 // rad
 
     // 風鈴の状態
-    private var theta: Double = 0.0
+    private var theta: Double = 0.1
     private var v: Double = 0.0
     private var currentTime = Date()
     
     // 抵抗係数
     private func cx(_ alpha: Double) -> Double {
         return 1.0221 * pow(fabs(cos(alpha)) * width / height, -0.1063)
+    }
+
+    private func tNewton(t0: Double, x: Double, a: Double, k: Double, c1: Double, c2: Double) -> Double {
+        let c3 = -k / m
+        let c4 = -c1 * m / k
+        let c5 = m * a / k
+        let c6 = c2 - x
+
+        var ti = t0
+        for _ in 0..<32 {
+            let expc3t = exp(c3*ti)
+            let xt = c4 * expc3t + c5 * ti + c6
+            let vt = c1 * expc3t + c5
+            ti = ti - Double(xt / vt)
+        }
+        return ti
     }
     
     
@@ -55,12 +71,15 @@ class Furin {
         let s = width * height * fabs(cos(alpha))
 
         // 加速度
-        let a = (windSpeed * windSpeed * rho * s * cx(alpha) * cos(theta) * 0.5 / m - g * sin(theta)) - 100 * s * cx(alpha) * (v - windSpeed)
-        let dv = a * dt
+        let k = rho * cx(alpha) * s * cos(theta) 
+        let a = windSpeed * k / m - g * sin(theta)
 
         // 次の状態
-        var thetaNew = theta + v * dt + dv * dt * 0.5
-        var vNew = v + dv
+        let c1 = v - m * a / k
+        let c2 = theta + m * c1 / k
+        let c1exp = c1 * exp(-k * dt / m)
+        var vNew =  m * a / k + c1exp
+        var thetaNew = c2 + m * a * dt / k - m / k * c1exp
         // 傘に当たらなかった場合は状態を更新して終了
         if thetaEdge > thetaNew && thetaNew > -thetaEdge {
             updateStaus(thetaNew, vNew, Date())
@@ -68,29 +87,36 @@ class Furin {
         }
 
         // 当たり判定
+        var c1Prev = c1
+        var c2Prev = c2
+        var c1expPrev = c1exp
         var dtPrev = dt
         var thetaPrev = theta
         var vPrev = v
         var hitList: [Hit] = []
         while((thetaNew >= thetaEdge || thetaNew <= -thetaEdge)){
-            var vEdgeBefore = sqrt(vPrev * vPrev + 2 * a * (thetaEdge - thetaPrev)) // 傘に当たる直前の速度
+            
+            var t0 = (sqrt(vPrev * vPrev + 2 * a * (thetaEdge - thetaPrev)) - vPrev) / a
             if thetaNew <= -thetaEdge {
-                vEdgeBefore = -sqrt(vPrev * vPrev + 2 * a * (-thetaEdge - thetaPrev))
+                t0 = (-sqrt(vPrev * vPrev + 2 * a * (-thetaEdge - thetaPrev)) - vPrev) / a
             }
-            let tBefore = (vEdgeBefore - vPrev) / a // 傘に当たるまでの時間
-            hitList.append(Hit(dt: tBefore,v: vEdgeBefore))
+            let tBefore = tNewton(t0:t0, x:thetaPrev, a:a, k:k, c1:c1Prev, c2:c2Prev) // 傘に当たるまでの時間
+            let vEdgeBefore = m * a / k + c1expPrev // 傘に当たる直前の速度
+            hitList.append(Hit(dt: tBefore, v: vEdgeBefore))
             
-            let tAfter = dtPrev - tBefore; // 傘に当たった後の時間
-            let vEdgeAfter = -e * vEdgeBefore // 傘に当たった直後の速度
-            thetaNew = thetaEdge + vEdgeAfter * tAfter + a * tAfter * tAfter * 0.5
-            vNew = a * tAfter + vEdgeAfter
-            dtPrev = tAfter
+            dtPrev = dtPrev - tBefore; // 傘に当たった後の時間
+            vPrev = -e * vEdgeBefore // 傘に当たった直後の速度
             thetaPrev = thetaEdge
-            vPrev = vEdgeAfter
+
+            c1Prev = vPrev - m * a / k
+            c2Prev = thetaPrev + m * c1Prev / k
+            c1expPrev = c1Prev * exp(-k * dtPrev / m)
+            vNew =  m * a / k + c1expPrev
+            thetaNew = c2Prev + m * a * dtPrev / k - m / k * c1expPrev
             
-            if hitList.count > 3 {
+            if hitList.count > 5 {
                 thetaNew = thetaEdge
-                vNew = vEdgeAfter
+                vNew = vPrev
                 break
             }
         }
